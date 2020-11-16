@@ -1,0 +1,58 @@
+x = 1(mod 12)
+x = 3(mod 5)
+x = 0(mod 7)
+
+m = 12 * 5 * 7 = 420
+
+m1 = 12 	M1 = 420/12 = 35 	a1 = 1
+m2 = 5 		M2 = 420/5 = 84		a2 = 3
+m3 = 7 		M3 = 420/7 = 60		a3 = 0
+
+yj = Mj^-1(mod mj)
+
+yj paskaiciuotas naudojant mano programą:
+
+y1 = 35^-1(mod 12) = 11
+y2 = 84^-1(mod 5) = 4
+y3 = 60^-1(mod 7) = 2
+
+a1*y1*M1 + a2*y2*M2 + a3*y3*M3 = 1393
+
+x = 1393 (mod 420) = 133
+1393 (mod 12) = 1
+1393 (mod 5) = 3
+1393 (mod 7) = 0
+
+
+
+
+mano stud.nr yra 1710930, bet toki skaičių pakėlus laipsniu 1710930 gausime skaičių,
+kurio gale bus 1710930 nulių ir aišku kad toks skaičius dalinsis iš 2 su liekana 0.
+
+Todėl atliksiu skaičiavimą ir su 1710932 (nes 1710931 mažiausias daliklis nelygus vientui yra 17
+ir 1710931^17 irgi labai didelis skaičius):
+1710932^1710932 paskutinis skaitmuo dvejetainėje sistemoje (sąrašo numeris 2):
+
+1710932^1710932 (mod 2)
+(1710932^2^2)^427733
+
+0 	1 	2	3
+0	0 	0	0
+0 	0 	1	0
+
+(0)^427733 (mod 2) = 0 (mod 2) = 0
+
+paskutinis skaicius bus 0
+
+1710933^1710933 paskutinis skaitmuo dvejetainėje sistemoje (sąrašo numeris 2):
+
+1710933^1710933 (mod 2)
+(1710933^3)^570311
+
+0 	1 	2
+1	1 	1
+0 	1 	0
+
+(1)^570311 (mod 2) = 1 (mod 2) = 1
+
+paskutinis skaicius bus 1
