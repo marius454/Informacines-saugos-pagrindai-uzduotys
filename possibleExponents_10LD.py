@@ -3,8 +3,7 @@
 
 import math
 from itertools import combinations as comb
-from reverseMod_6LD import getGCD, calcReverseMod
-
+from reverseMod_6LD import getGCD
 
 def getPrimeFactors(n):
     i = 2
@@ -19,33 +18,41 @@ def getPrimeFactors(n):
         factors.append(n)
     return factors
 
-
-
-def getPossibleCipherExponents(value1, value2 = None):
+def getPossibleCipherExponents(value1):
     possibleCipherExponents = []
-    if value2 == None:
-        n = value1
+    n = value1
 
-        possibleDivisorPairs = getPrimeFactors(n)
-        fi = n - possibleDivisorPairs[0] - possibleDivisorPairs[1] + 1
-        for i in range(2, fi + 1):
-            if getGCD(i, fi)[0] == 1:
-                possibleCipherExponents.append(i)
-    else:
-        p = value1
-        q = value2
-        
-        fi = p*q - p - q + 1
-        for i in range(2, fi + 1):
-            if getGCD(i, fi)[0] == 1:
-                possibleCipherExponents.append(i)
+    possibleDivisorPairs = getPrimeFactors(n)
+    fi = n - possibleDivisorPairs[0] - possibleDivisorPairs[1] + 1
+    for i in range(2, fi + 1):
+        if getGCD(i, fi)[0] == 1:
+            possibleCipherExponents.append(i)
 
     return possibleCipherExponents
-    
 
 
-# n = 999997
+
+# n = 299
+# print("")
 # print(getPrimeFactors(n))
-# print(getPossibleDivisorPairs(n))
 # print (getPossibleCipherExponents(n))
-# print (getPossibleCipherExponents(157,17))
+
+# n = 221
+# print("")
+# print(getPrimeFactors(n))
+# print (getPossibleCipherExponents(n))
+
+# n = 323
+# print("")
+# print(getPrimeFactors(n))
+# print (getPossibleCipherExponents(n))
+
+# n = 391
+# print("")
+# print(getPrimeFactors(n))
+# print (getPossibleCipherExponents(n))
+
+# n = 667
+# print("")
+# print(getPrimeFactors(n))
+# print (getPossibleCipherExponents(n))
